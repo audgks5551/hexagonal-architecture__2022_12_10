@@ -1,7 +1,11 @@
 package org.example;
 
+import org.example.adapter.input.RouterViewCLIAdapter;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        var cli = new RouterViewCLIAdapter();
+        var type = "EDGE";
+        System.out.println(cli.obtainRelatedRouters(type));
     }
 }
