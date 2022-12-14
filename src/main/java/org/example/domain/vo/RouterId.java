@@ -1,24 +1,19 @@
 package org.example.domain.vo;
 
-public class RouterId {
-    private final String id;
+import java.util.UUID;
 
-    public RouterId(String id) {
+public class RouterId {
+    private final UUID id;
+
+    private RouterId(UUID id) {
         this.id = id;
     }
 
-    public static RouterId of(String id) {
-        return new RouterId(id);
+    public static RouterId withId(String id) {
+        return new RouterId(UUID.fromString(id));
     }
 
-    public String getId() {
-        return this.id;
-    }
-
-    @Override
-    public String toString() {
-        return "RouterId{" +
-                "id='" + id + '\'' +
-                '}';
+    public static RouterId withoutId() {
+        return new RouterId(UUID.randomUUID());
     }
 }

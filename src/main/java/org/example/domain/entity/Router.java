@@ -1,16 +1,18 @@
 package org.example.domain.entity;
 
+import org.example.domain.vo.IP;
+import org.example.domain.vo.Network;
 import org.example.domain.vo.RouterId;
 import org.example.domain.vo.RouterType;
 
 import java.util.List;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 public class Router {
 
     private final RouterType routerType;
     private final RouterId routerId;
+    private Switch networkSwitch;
 
     public Router(RouterType routerType, RouterId routerId) {
         this.routerType = routerType;
@@ -37,17 +39,23 @@ public class Router {
         return p -> p.getRouterType() == RouterType.CORE;
     }
 
-    public static List<Router> retrieveRouter(List<Router> routers, Predicate<Router> predicate) {
-        return routers.stream()
-                .filter(predicate)
-                .collect(Collectors.<Router>toList());
-    }
-
     @Override
     public String toString() {
         return "Router{" +
                 "routerType=" + routerType +
                 ", routerId=" + routerId +
                 '}';
+    }
+
+    public void addNetworkToSwitch(Network network) {
+        this.networkSwitch = networkSwitch.addNetwork(network);
+    }
+
+    public List<Network> retrieveNetworks() {
+        return networkSwitch.getNetworks();
+    }
+
+    public Network createNetwork(IP address, String name, int cidr) {
+        return new Network(address, name, cidr);
     }
 }
