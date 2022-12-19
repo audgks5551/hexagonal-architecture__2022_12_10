@@ -16,8 +16,8 @@ public class Event implements Comparable<Event> {
     private Activity activity;
 
     @Override
-    public int compareTo(Event o) {
-        return 0;
+    public int compareTo(Event event) {
+        return timestamp.compareTo(event.timestamp);
     }
 
     public Event(OffsetDateTime timestamp, EventId id, Protocol protocol, Activity activity) {

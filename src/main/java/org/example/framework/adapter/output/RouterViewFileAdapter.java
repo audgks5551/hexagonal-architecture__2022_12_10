@@ -1,4 +1,4 @@
-package org.example.adapter.output;
+package org.example.framework.adapter.output;
 
 import org.example.application.port.output.RouterViewOutputPort;
 import org.example.domain.entity.Router;

@@ -16,4 +16,15 @@ public class RouterId {
     public static RouterId withoutId() {
         return new RouterId(UUID.randomUUID());
     }
+
+    public UUID getId() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return "RouterId{" +
+                "id=" + id +
+                '}';
+    }
 }

@@ -26,4 +26,13 @@ public class Network {
     public int getCidr() {
         return cidr;
     }
+
+    @Override
+    public String toString() {
+        return "Network{" +
+                "address=" + address +
+                ", name='" + name + '\'' +
+                ", cidr=" + cidr +
+                '}';
+    }
 }

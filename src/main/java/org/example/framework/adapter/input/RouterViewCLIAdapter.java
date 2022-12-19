@@ -1,10 +1,10 @@
-package org.example.adapter.input;
+package org.example.framework.adapter.input;
 
-import org.example.adapter.output.RouterViewFileAdapter;
 import org.example.application.port.input.RouterViewInputPort;
 import org.example.application.usecase.RouterViewUseCase;
 import org.example.domain.entity.Router;
 import org.example.domain.vo.RouterType;
+import org.example.framework.adapter.output.RouterViewFileAdapter;
 
 import java.util.List;
 
@@ -23,6 +23,4 @@ public class RouterViewCLIAdapter {
     public List<Router> obtainRelatedRouters(String type) {
         return routerViewUseCase.getRouters(Router.filterRouterByType(RouterType.valueOf(type)));
     }
-
-
 }

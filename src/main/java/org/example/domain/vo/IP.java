@@ -17,4 +17,12 @@ public class IP {
 
         this.address = address;
     }
+
+    @Override
+    public String toString() {
+        return "IP{" +
+                "address='" + address + '\'' +
+                ", protocol=" + protocol +
+                '}';
+    }
 }

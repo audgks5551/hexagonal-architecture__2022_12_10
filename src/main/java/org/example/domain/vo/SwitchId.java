@@ -16,4 +16,11 @@ public class SwitchId {
     public static SwitchId withoutId() {
         return new SwitchId(UUID.randomUUID());
     }
+
+    @Override
+    public String toString() {
+        return "SwitchId{" +
+                "id=" + id +
+                '}';
+    }
 }

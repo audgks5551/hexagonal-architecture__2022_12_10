@@ -31,4 +31,14 @@ public class Switch {
     public List<Network> getNetworks() {
         return networks;
     }
+
+    @Override
+    public String toString() {
+        return "Switch{" +
+                "switchType=" + switchType +
+                ", switchId=" + switchId +
+                ", networks=" + networks +
+                ", address=" + address +
+                '}';
+    }
 }
